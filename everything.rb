@@ -84,8 +84,3 @@ module Everything
         ret
     end
 end
-
-query = Everything::Query.new
-query.search = "everything"
-query.execute
-p Everything.results.to_a
