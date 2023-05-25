@@ -1,7 +1,7 @@
 require 'win32api'
 
 module Everything
-    DLL_PATH = File.join(__dir__, 'dll', 'Everything64.dll')
+    DLL_PATH = File.join(__dir__, 'dll', 'Everything32.dll')
 
     class Result
         attr_accessor :file_name, :path
