@@ -13,6 +13,11 @@ module Everything
 
     class Query
         attr_accessor :search
+        attr_accessor :max_results
+
+        def initialize
+            @max_results = 100
+        end
 
         def execute
             Everything.execute_query self
@@ -60,6 +65,7 @@ module Everything
 
         dll_function("Everything_Reset", [], "V").()
         dll_function("Everything_SetSearch", ["P"], "V").(query.search) if query.search
+        dll_function("Everything_SetMax", ["I"], "V").(query.max_results)
 
         # TODO: make non-blocking?
         dll_function("Everything_Query", ["I"], "L").(1)
